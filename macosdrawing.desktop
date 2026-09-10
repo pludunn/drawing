@@ -1,0 +1,10 @@
+# This shortcut template accompanies macosinstaller.sh.
+# macOS does not use the freedesktop .desktop format; the installer creates Drawing Pad.app instead.
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Drawing Pad
+Comment=Use macosinstaller.sh to create the native macOS app bundle
+Exec=macosinstaller.sh
+Terminal=false
+Categories=Graphics;Education;

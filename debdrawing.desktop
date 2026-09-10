@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Drawing Pad
+Type=Application
+Icon=${HOME}/Pictures/drawing-pad-icon.png
+Exec=/usr/bin/python3 "${HOME}/drawing.py"
+Terminal=false

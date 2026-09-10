@@ -5,26 +5,11 @@ module. It is deliberately simple: move the turtle with the keyboard and it
 leaves a line wherever the pen is down. No network connection or account is
 needed to draw after installation.
 
-## Requirements
-
-* Python 3.10 or newer.
-* Tk support for Python (`python3-tk` on Debian/Ubuntu, `python3-tkinter` on
-  Fedora, and `tk` on Arch).
-* A graphical desktop session; `turtle` cannot open its window in a headless
-  terminal.
-
 ## Usage
 
-Run the app directly from a checkout:
-
-```sh
-python3 main.py
-```
-
-Click the Drawing Pad window once if it does not receive key presses. The
-status text at the top of the window shows whether the pen is drawing, the
-active speed, and the selected color. Press `?` at any time to show a compact
-control reminder.
+After installation, open **Drawing Pad** from your computer's application menu.
+If the drawing window does not respond to keys, click it once first. The message
+at the top shows whether you are drawing, your speed, and the current color.
 
 ### Keyboard controls
 
@@ -40,95 +25,29 @@ control reminder.
 | `R` | Return home | Moves to the center and faces right without adding a line. |
 | `U` | Undo | Removes the most recent turtle action. |
 | `C` | Clear canvas | Erases the drawing and restores the default pen, speed, and position. |
-| `?` | Show help | Replaces the status text with a short list of controls. |
+| `?` | Show help | Shows a short list of controls in the window. |
 | `Q` | Quit | Closes Drawing Pad. |
 
 ## Install
 
-Each installer downloads the current `main.py` and icon from this repository,
-then installs files only in your user account. Run the command from a checkout
-of this repository. On Linux, the app appears in your desktop application
-launcher as **Drawing Pad**.
+You do **not** need to download this project or open a project folder. Download
+the installer for your computer below from GitHub, then open the downloaded
+file. The installer downloads Drawing Pad and adds it to your application menu.
 
-> Review a script before running it. The Linux installers use `sudo` only to
-> install required system packages; the application itself is installed under
-> your home directory.
+| Your computer | Download this installer |
+| --- | --- |
+| Debian or Ubuntu | [Download the Debian/Ubuntu installer](https://github.com/pludunn/drawing/raw/main/debinstaller.sh) |
+| Fedora | [Download the Fedora installer](https://github.com/pludunn/drawing/raw/main/fedorainstaller.sh) |
+| Arch Linux | [Download the Arch installer](https://github.com/pludunn/drawing/raw/main/archinstaller.sh) |
+| NixOS | [Download the NixOS installer](https://github.com/pludunn/drawing/raw/main/nixosinstaller.sh) |
+| macOS | [Download the macOS installer](https://github.com/pludunn/drawing/raw/main/macosinstaller.sh) |
+| Windows | [Download the Windows installer](https://github.com/pludunn/drawing/raw/main/windowsinstaller.bat) |
 
-### Debian and Ubuntu
+Your computer may ask for your password before it installs the small Python
+components Drawing Pad needs. This is normal. Once it finishes, search for
+**Drawing Pad** in your application menu. On macOS, look in your Applications
+folder. On Windows, the installer prints the location of the Drawing Pad
+shortcut.
 
-The existing Debian installer has been corrected to install its desktop entry
-in the standard user application directory, install the icon where desktop
-environments can find it, and use a reliable launcher.
-
-```sh
-./debinstaller.sh
-```
-
-### Fedora
-
-```sh
-./fedorainstaller.sh
-```
-
-This installs `python3`, `python3-tkinter`, and `curl` through `dnf`. The
-matching desktop-entry template is `fedoradrawing.desktop`.
-
-### Arch Linux
-
-```sh
-./archinstaller.sh
-```
-
-This installs `python`, `tk`, and `curl` through `pacman`. The matching
-desktop-entry template is `archdrawing.desktop`.
-
-### NixOS
-
-```sh
-./nixosinstaller.sh
-```
-
-The launcher uses `nix shell` to provide Python and Tk, so its first launch may
-download packages. The matching desktop-entry template is
-`nixosdrawing.desktop`.
-
-### macOS
-
-Install Python 3 first if needed (for example, `brew install python`), then:
-
-```sh
-./macosinstaller.sh
-```
-
-The script creates `~/Applications/Drawing Pad.app`. macOS does not use the
-Linux `.desktop` format, so `macosdrawing.desktop` is included as a documented
-shortcut template while the installer creates the native `.app` bundle.
-
-### Windows
-
-Install Python 3 from [python.org](https://www.python.org/downloads/) with
-Tcl/Tk enabled. Then use either installer from Command Prompt or PowerShell:
-
-```bat
-windowsinstaller.bat
-```
-
-```powershell
-.\windowsinstaller.ps1
-```
-
-Both create `%LOCALAPPDATA%\Drawing Pad\Drawing Pad.cmd`; run that command
-file to launch the application. Windows uses `.cmd`/PowerShell launch scripts
-rather than a shell `.exe`; these installers avoid shipping an opaque binary
-and use your installed Python runtime.
-
-## Included install files
-
-| Platform | Installer | Launcher/desktop file |
-| --- | --- | --- |
-| Debian/Ubuntu | `debinstaller.sh` | `debdrawing.desktop` |
-| Fedora | `fedorainstaller.sh` | `fedoradrawing.desktop` |
-| Arch | `archinstaller.sh` | `archdrawing.desktop` |
-| NixOS | `nixosinstaller.sh` | `nixosdrawing.desktop` |
-| macOS | `macosinstaller.sh` | `macosdrawing.desktop` and `Drawing Pad.app` |
-| Windows | `windowsinstaller.bat` or `windowsinstaller.ps1` | `Drawing Pad.cmd` |
+> Only download installers from the links above, which point to
+> `github.com/pludunn/drawing/raw/main/`.

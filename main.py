@@ -23,8 +23,10 @@ def hide():
     global hidden
     if hidden:
         pen.color("black")
+        pen.pendown()
         hidden = False
     else:
+        pen.penup()
         pen.color("red")
         hidden = True
 
@@ -58,7 +60,7 @@ def clear():
     pen.clear()
     pen.setheading(0)
     home()
-    while not hidden:
+    while hidden:
         hide()
     while speed != 1:
         accel()
